@@ -1,0 +1,10 @@
+#mainheading {
+    color: white;
+    font-size: 80px;
+    background: linear-gradient(to right, rgb(3, 76, 112), #e6d708 30%, #4d0533);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: 3s linear infinite;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
