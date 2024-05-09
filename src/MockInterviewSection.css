@@ -1,0 +1,40 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .teacher-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+  
+  .teacher-card:hover {
+    transform: translateY(-5px);
+    filter: grayscale(20%);
+  }
+  
+  .teacher-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  
+  .teacher-card p {
+    margin-bottom: 5px;
+    color: #666;
+  }
+  
+  .teacher-card a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  .teacher-card a:hover {
+    text-decoration: underline;
+  }
+  

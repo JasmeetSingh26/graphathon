@@ -12,7 +12,7 @@
     "react-horizontal-scrolling-menu": "^2.7.1",
     "react-loader-spinner": "^6.0.0-0",
     "react-router-dom": "^6.21.2",
-    "react-scripts": "5.0.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,7 +39,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.13.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
