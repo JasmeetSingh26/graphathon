@@ -1,21 +1,27 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
+import StudentComponent from './Student';
+import ResumeSection from './ResumeSection';
+import MockInterviewSection from './MockInterviewSection';
+import ApplicationForm from './ApplicationForm';
+
 
 import './App.css';
-import ExerciseDetail from './pages/ExerciseDetail';
-import Home from './pages/Home';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 
 const App = () => (
-  <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
+  <Box width="100vh" sx={{ width: { xl: '1488px' } }} m="auto">
     <Navbar />
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/exercise/:id" element={<ExerciseDetail />} />
+
+      <Route path="/" element={<StudentComponent />} />
+      <Route path="/student" element={<StudentComponent />} />
+      <Route path="/student/resume" element={<ResumeSection />} />
+      <Route path="/student/mock-interview" element={<MockInterviewSection />} />
+      <Route path="/apply/:jobId" element={<ApplicationForm />} />
     </Routes>
-    <Footer />
+
   </Box>
 );
 

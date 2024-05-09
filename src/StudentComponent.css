@@ -1,0 +1,43 @@
+/* StudentComponent.css */
+
+.student-component {
+    padding: 20px;
+}
+
+.student-navbar {
+    background-color: ;
+    color: #000;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.student-navbar h1 {
+    margin: 0;
+}
+
+.student-navbar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-navbar nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.student-navbar nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.student-navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.job-listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}

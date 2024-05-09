@@ -1,0 +1,20 @@
+.job-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.job-title {
+    margin-top: 0;
+}
+
+.job-info {
+    margin-bottom: 8px;
+}
+
+.job-description {
+    margin-top: 0;
+}
