@@ -6,7 +6,8 @@ const AdminJob = () => {
         companyName: '',
         location: '',
         jobDescription: '',
-        jobId: ''
+        jobId: '',
+        jobEnd: new Date().toISOString().slice(0, 10) // Set initial end date to today
     });
 
     const handleChange = (e) => {
@@ -20,7 +21,7 @@ const AdminJob = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/jobs', {
+            const response = await fetch('http://localhost:9000/api/jobs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,13 +30,13 @@ const AdminJob = () => {
             });
             if (response.ok) {
                 console.log('Job added successfully!');
-                // Reset form fields if needed
                 setJobData({
                     jobName: '',
                     companyName: '',
                     location: '',
                     jobDescription: '',
-                    jobId: ''
+                    jobId: '',
+                    jobEnd: new Date().toISOString().slice(0, 10)
                 });
             } else {
                 console.error('Failed to add job');
@@ -68,6 +69,10 @@ const AdminJob = () => {
                 <div>
                     <label htmlFor="jobId">Job ID:</label>
                     <textarea id="jobId" name="jobId" value={jobData.jobId} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label htmlFor="jobEnd">End Date:</label>
+                    <input type="date" id="jobEnd" name="jobEnd" value={jobData.jobEnd} onChange={handleChange} required />
                 </div>
                 <button type="submit">Add Job</button>
             </form>

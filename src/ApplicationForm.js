@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './ApplicationForm.css'; // Import CSS file for styling
+import './ApplicationForm.css';
 
 const ApplicationForm = () => {
-    const { jobId } = useParams(); // Get the jobId from the route params
+    const { jobId } = useParams();
     const [formData, setFormData] = useState({
         jobId: jobId,
         cgpa: '',
@@ -14,7 +14,6 @@ const ApplicationForm = () => {
         linkedin: '',
         github: '',
         location: '',
-        resume: null
     });
 
     const handleChange = (event) => {
@@ -35,7 +34,7 @@ const ApplicationForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/students', {
+            const response = await fetch('http://localhost:9000/api/students', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,7 +55,6 @@ const ApplicationForm = () => {
                     linkedin: '',
                     github: '',
                     location: '',
-                    resume: null
                 });
             } else {
                 alert('Form submission failed!');
@@ -68,8 +66,9 @@ const ApplicationForm = () => {
     };
 
     return (
-        <div className="application-form">
-            <h2>Application Form for Job ID: {jobId}</h2>
+        <div className='block-above' style={{ marginTop: '40px' }}>
+        <div className="application-form" > 
+            <h2 style={{ marginBottom: '20px', alignItems: 'center' }}>Application Form for Job ID: {jobId}</h2>
             <form onSubmit={handleSubmit}>
                 <input type="hidden" name="jobId" value={jobId} />
                 <div className="form-group">
@@ -106,10 +105,11 @@ const ApplicationForm = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="resume">Resume:</label>
-                    <input type="file" id="resume" name="resume" onChange={handleFileChange} accept=".pdf,.doc,.docx" />
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
                 </div>
                 <button type="submit">Submit</button>
             </form>
+        </div>
         </div>
     );
 };
