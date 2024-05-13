@@ -1,5 +1,11 @@
 /* ApplicationForm.css */
+.block-above {
+    margin-bottom: 20px;
+    position: relative;
+}
 .application-form {
+    padding-top: 20px;
+    margin-top: 20px;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -20,20 +26,22 @@
 .input {
     width: 100%;
     padding: 8px;
+    size: 36px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.submit-button {
+button {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
     padding: 8px 16px;
     cursor: pointer;
+    margin-top: 20px;
     transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
+button:hover {
     background-color: #0056b3;
 }

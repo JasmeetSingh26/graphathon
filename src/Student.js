@@ -9,7 +9,7 @@ const StudentComponent = () => {
     useEffect(() => {
         const fetchJobListings = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/jobs/all');
+                const response = await fetch('http://localhost:9000/api/jobs/all');
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);
@@ -31,17 +31,17 @@ const StudentComponent = () => {
 
     return (
         <div className="student-component">
-            <div className="student-navbar">
-                <h1>Student Dashboard</h1>
+            <div className="student-navbar" id = "one">
+                <h1 style={{ marginBottom: '10px',marginTop:"25px",fontSize : 45 }}>Student Dashboard</h1>
                 <nav>
-                    <ul>
-                        <li><Link to="/student">Jobs</Link></li>
-                        <li><Link to="/student/resume">Resume</Link></li>
-                        <li><Link to="/student/mock-interview">Mock Interview</Link></li>
+                    <ul style={{marginTop:"-15px",marginBottom: '20px'}}>
+                        <li ><Link to="/student">Jobs</Link></li>
+                        <li ><Link to="/student/resume">Resume</Link></li>
+                        <li ><Link to="/student/mock-interview">Mock Interview</Link></li>
                     </ul>
                 </nav>
             </div>
-            <h1>Job Listings for Students</h1>
+            <h1 id = "headingListing" style={{ marginBottom: '20px' ,marginTop:"65px"}}>Job Listings for Students</h1>
             <div className="job-listings">
                 {jobListings.map(job => (
                     <JobComponent key={job.jobId} job={job} />

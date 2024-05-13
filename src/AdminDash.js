@@ -8,7 +8,7 @@ const AdminDash = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/students/all');
+                const response = await fetch('http://localhost:9000/api/students/all');
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);
@@ -39,17 +39,17 @@ const AdminDash = () => {
     }, []);
 
     return (
-        <div>
-            <h2>All Jobs and Applicants</h2>
+        <div style={{textAlign:'center'}}>
+            <h1 style={{marginTop : '40px',marginBottom: '30px',textAlign:'center'}}>All Jobs and Applicants</h1>
             {jobs.map(job => (
-                <div key={job.jobId}>
-                    <h3>Job ID: {job.jobId}</h3>
-                    <p>Number of Applicants: {job.applicants.length}</p>
+                <div key={job.jobId} style={{textAlign:'center', marginBottom: '24px'}}>
+                    <h3 style={{marginBottom:'16px'}}> Job ID: {job.jobId}</h3>
+                    <p style={{marginBottom: '10px'}}>Number of Applicants: {job.applicants.length}</p>
                     <JobApplicants applicants={job.applicants} />
                 </div>
             ))}
             <Link to="/admin/job">
-                <button>Add New Job</button>
+                <button >Add New Job</button>
             </Link>
         </div>
     );
