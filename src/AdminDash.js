@@ -8,7 +8,7 @@ const AdminDash = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/students/all');
+                const response = await fetch('http://localhost:9000/api/students/all');
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);

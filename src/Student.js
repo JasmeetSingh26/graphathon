@@ -9,7 +9,7 @@ const StudentComponent = () => {
     useEffect(() => {
         const fetchJobListings = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/jobs/all');
+                const response = await fetch('http://localhost:9000/api/jobs/all');
                 if (response.ok) {
                     const data = await response.json();
                     console.log(data);

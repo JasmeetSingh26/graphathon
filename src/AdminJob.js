@@ -6,7 +6,8 @@ const AdminJob = () => {
         companyName: '',
         location: '',
         jobDescription: '',
-        jobId: ''
+        jobId: '',
+        //jobEndDate: ''
     });
 
     const handleChange = (e) => {
@@ -20,7 +21,7 @@ const AdminJob = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/jobs', {
+            const response = await fetch('http://localhost:9000/api/jobs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -35,7 +36,8 @@ const AdminJob = () => {
                     companyName: '',
                     location: '',
                     jobDescription: '',
-                    jobId: ''
+                    jobId: '',
+                    //jobEndDate: ''
                 });
             } else {
                 console.error('Failed to add job');

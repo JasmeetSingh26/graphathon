@@ -14,7 +14,6 @@ const ApplicationForm = () => {
         linkedin: '',
         github: '',
         location: '',
-        resume: null
     });
 
     const handleChange = (event) => {
@@ -35,7 +34,7 @@ const ApplicationForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/api/students', {
+            const response = await fetch('http://localhost:9000/api/students', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -56,7 +55,6 @@ const ApplicationForm = () => {
                     linkedin: '',
                     github: '',
                     location: '',
-                    resume: null
                 });
             } else {
                 alert('Form submission failed!');
@@ -106,7 +104,7 @@ const ApplicationForm = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="resume">Resume:</label>
-                    <input type="file" id="resume" name="resume" onChange={handleFileChange} accept=".pdf,.doc,.docx" />
+                    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" />
                 </div>
                 <button type="submit">Submit</button>
             </form>
