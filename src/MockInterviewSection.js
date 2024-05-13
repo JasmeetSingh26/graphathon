@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 import './MockInterviewSection.css'; 
+import './StudentComponent.css';
 
 const MockInterviewSection = () => {
     const teachers = [
@@ -17,23 +18,36 @@ const MockInterviewSection = () => {
             expertise: 'Data Science',
             availability: 'Tuesday, Thursday'
         },
-        // Add more teachers as needed
+        { 
+            name: 'Teacher 3', 
+            email: 'teacher3@example.com',
+            expertise: 'Software Engineering',
+            availability: 'Monday'
+        },
+        { 
+            name: 'Teacher 4', 
+            email: 'teacher4@example.com',
+            expertise: 'Software Engineering',
+            availability: 'Wednesday, Friday'
+        }
     ];
 
     return (
         <div>
-            <div className="student-navbar">
-                <h1>Student Dashboard</h1>
+            <div className="student-component">
+            <div className="student-navbar" id = "one">
+                <h1 style={{ marginBottom: '10px',marginTop:"25px" ,fontSize : 45 }}>Student Dashboard</h1>
                 <nav>
-                    <ul>
+                    <ul style={{marginTop:"-15px"}}>
                         <li><Link to="/student">Jobs</Link></li>
                         <li><Link to="/student/resume">Resume</Link></li>
                         <li><Link to="/student/mock-interview">Mock Interview</Link></li>
                     </ul>
                 </nav>
             </div>
-            <div style={{ textAlign: 'center' }}>
-            <h2>Available Teachers for Mock Interviews</h2>
+            </div>
+            <div style={{textAlign: 'center' }}>
+            <h2 style={{marginTop:"16px",marginBottom:"30px",marginLeft:"30%"}}> Available Teachers for Mock Interviews</h2>
             <ul>
                 {teachers.map((teacher, index) => (
                     <li key={index} className="teacher-card"> {/* Apply the class here */}

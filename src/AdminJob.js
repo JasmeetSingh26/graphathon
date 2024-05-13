@@ -7,6 +7,7 @@ const AdminJob = () => {
         location: '',
         jobDescription: '',
         jobId: '',
+        jobEnd: new Date().toISOString().slice(0, 10) // Set initial end date to today,
         //jobEndDate: ''
     });
 
@@ -30,14 +31,12 @@ const AdminJob = () => {
             });
             if (response.ok) {
                 console.log('Job added successfully!');
-                // Reset form fields if needed
                 setJobData({
                     jobName: '',
                     companyName: '',
                     location: '',
                     jobDescription: '',
-                    jobId: '',
-                    //jobEndDate: ''
+                    jobId: ''
                 });
             } else {
                 console.error('Failed to add job');
@@ -70,6 +69,10 @@ const AdminJob = () => {
                 <div>
                     <label htmlFor="jobId">Job ID:</label>
                     <textarea id="jobId" name="jobId" value={jobData.jobId} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label htmlFor="jobEnd">End Date:</label>
+                    <input type="date" id="jobEnd" name="jobEnd" value={jobData.jobEnd} onChange={handleChange} required />
                 </div>
                 <button type="submit">Add Job</button>
             </form>

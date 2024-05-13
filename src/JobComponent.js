@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from React Router
-import './JobComponent.css'; // Import CSS file for styling
+import { Link } from 'react-router-dom'; 
+import './JobComponent.css'; 
 
 const JobComponent = ({ job }) => {
     return (
